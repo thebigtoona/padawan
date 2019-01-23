@@ -212,7 +212,7 @@ Template.qnaire_build.events({
             let qlabel = $(event.target).closest("[data-label]").data("label");
             let qnr = Qnaire.findOne( {_id:instance.qnrid} );
             if (!qnr) return [];
-            qnr.updateText(qlabel, $(event.target).val());
+            qnr.updateText(qlabel.toString(), $(event.target).val().toString().trim())
         //}
     }, 2000),
     'keyup input.input-qqlabel':_.debounce(function (event, instance) {
