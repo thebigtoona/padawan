@@ -123,7 +123,7 @@ Template.qnaire_build.events({
         if (qlbl !== BLANK_Q.label) {
             let q = Qnaire.findOne( {_id:Template.instance().qnrid} );
             if (!q) return [];
-            q.setQtype(qlbl, QuestionType[$seltype.val()]);
+            q.setQtype(qlbl.toString(), QuestionType[$seltype.val().toString()]);
         }
     },
     'click button.btn-add-item'(event, instance) {
